@@ -12,7 +12,7 @@ func prime(number int) string {
     return strings.Join(factor, ",")
   }
 
-  if number == 9 {
+  if number %3 == 0 {
     factor = findFactor(number,3)
     return strings.Join(factor, ",")
   }

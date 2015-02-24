@@ -66,3 +66,24 @@ func TestPrimeTenShouldBeTwoFive(t *testing.T) {
     t.Error("It should be 2,5 but got ", factor)
   }
 }
+
+func TestPrimeTwelveShouldBeTwoTwoThree(t *testing.T) {
+  factor := prime(12)
+  if factor != "2,2,3" {
+    t.Error("It should be 2,2,3 but got ", factor)
+  }
+}
+
+func TestPrimeForteenShouldBeTwoSeven(t *testing.T) {
+  factor := prime(14)
+  if factor != "2,7" {
+    t.Error("It should be 2,7 but got ", factor)
+  }
+}
+
+func TestPrimeFifteenShouldBeThreeFive(t *testing.T) {
+  factor := prime(15)
+  if factor != "3,5" {
+    t.Error("It should be 3,5 but got ", factor)
+  }
+}
