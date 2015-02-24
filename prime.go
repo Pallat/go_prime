@@ -16,10 +16,7 @@ func newNumber(n number) numeric {
 type number int
 
 func (n *number) factor() string {
-  return prime(int(*n))
-}
-
-func prime(number int) string {
+  number := int(*n)
   var factor []string
   if number %2 == 0 {
     factor = findFactor(number,2)
