@@ -7,26 +7,16 @@ import (
 
 func prime(number int) string {
   var factor []string
-  if number == 4 {
+  if number %2 == 0 {
     factor = findFactor(number,2)
     return strings.Join(factor, ",")
   }
-  if number == 6 {
-    factor = findFactor(number,2)
-    return strings.Join(factor, ",")
-  }
-  if number == 8 {
-    factor = findFactor(number,2)
-    return strings.Join(factor, ",")
-  }
+
   if number == 9 {
     factor = findFactor(number,3)
     return strings.Join(factor, ",")
   }
-  if number == 10 {
-    factor = findFactor(number, 2)
-    return strings.Join(factor, ",")
-  }
+
   return strconv.Itoa(number)
 }
 
