@@ -5,6 +5,12 @@ import (
   "strings"
   )
 
+type number int
+
+func (n *number) factor() string {
+  return prime(int(*n))
+}
+
 func prime(number int) string {
   var factor []string
   if number %2 == 0 {
