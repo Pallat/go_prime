@@ -8,19 +8,20 @@ import (
 func prime(number int) string {
   var factor []string
   if number == 4 {
-    factor = findFactor(number)
+    factor = findFactor(number,2)
     return strings.Join(factor, ",")
   }
   if number == 6 {
-    factor = findFactor(number)
+    factor = findFactor(number,2)
     return strings.Join(factor, ",")
   }
   if number == 8 {
-    factor = findFactor(number)
+    factor = findFactor(number,2)
     return strings.Join(factor, ",")
   }
   if number == 9 {
-    return "3,3"
+    factor = findFactor(number,3)
+    return strings.Join(factor, ",")
   }
   if number == 10 {
     return "2,5"
@@ -28,11 +29,11 @@ func prime(number int) string {
   return strconv.Itoa(number)
 }
 
-func findFactor(number int) []string {
+func findFactor(number int, base int) []string {
   var factor []string
-  for (number/2) > 1 {
-    factor = append(factor,"2")
-    number/=2
+  for (number/base) > 1 {
+    factor = append(factor, strconv.Itoa(base))
+    number/=base
   }
   factor = append(factor, strconv.Itoa(number))
   return factor
