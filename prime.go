@@ -5,6 +5,14 @@ import (
   "strings"
   )
 
+type numeric interface {
+  factor() string
+}
+
+func newNumber(n number) numeric {
+  return &n
+}
+
 type number int
 
 func (n *number) factor() string {

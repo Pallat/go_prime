@@ -5,7 +5,7 @@ import (
   )
 
 func TestPrimeOneShouldBeOne(t *testing.T) {
-  var prime number = 1
+  var prime numeric = newNumber(1)
   factor := prime.factor()
   if factor != "1" {
     t.Error("It should be 1 but got ", factor)
