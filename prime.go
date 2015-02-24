@@ -20,12 +20,16 @@ func prime(number int) string {
   return strconv.Itoa(number)
 }
 
-func findFactor(number int, base int) []string {
+func findFactor(number int, lcm int) []string {
   var factor []string
-  for (number/base > 1) && (number%base == 0) {
-    factor = append(factor, strconv.Itoa(base))
-    number/=base
+  for IsMoreLCM(number, lcm) && (number%lcm == 0) {
+    factor = append(factor, strconv.Itoa(lcm))
+    number/=lcm
   }
   factor = append(factor, strconv.Itoa(number))
   return factor
+}
+
+func IsMoreLCM(number, lcm int) bool {
+  return number/lcm > 1
 }
