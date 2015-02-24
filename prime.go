@@ -24,14 +24,15 @@ func prime(number int) string {
     return strings.Join(factor, ",")
   }
   if number == 10 {
-    return "2,5"
+    factor = findFactor(number, 2)
+    return strings.Join(factor, ",")
   }
   return strconv.Itoa(number)
 }
 
 func findFactor(number int, base int) []string {
   var factor []string
-  for (number/base) > 1 {
+  for (number/base > 1) && (number%base == 0) {
     factor = append(factor, strconv.Itoa(base))
     number/=base
   }
