@@ -12,7 +12,8 @@ func prime(number int) string {
     return strings.Join(factor, ",")
   }
   if number == 6 {
-    return "2,3"
+    factor = findFactor(number)
+    return strings.Join(factor, ",")
   }
   if number == 8 {
     return "2,2,2"
