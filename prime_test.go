@@ -45,3 +45,10 @@ func TestPrimeSixShouldBeTwoThree(t *testing.T) {
     t.Error("It should be 2,3 but got ", factor)
   }
 }
+
+func TestPrimeEightShouldBeTwoTwoTwo(t *testing.T) {
+  factor := prime(8)
+  if factor != "2,2,2" {
+    t.Error("It should be 2,2,2 but got ", factor)
+  }
+}
