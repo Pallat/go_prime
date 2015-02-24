@@ -17,3 +17,10 @@ func TestPrimeTwoShouldBeTwo(t *testing.T) {
     t.Error("It should be 2 but got ", factor)
   }
 }
+
+func TestPrimeThreeShouldBeThree(t *testing.T) {
+  factor := prime(3)
+  if factor != "3" {
+    t.Error("It should be 3 but got ", factor)
+  }
+}
