@@ -2,11 +2,14 @@ package prime
 
 import (
   "strconv"
+  "strings"
   )
 
 func prime(number int) string {
+  var factor []string
   if number == 4 {
-    return "2,2"
+    factor = findFactor(number)
+    return strings.Join(factor, ",")
   }
   if number == 6 {
     return "2,3"
@@ -21,4 +24,14 @@ func prime(number int) string {
     return "2,5"
   }
   return strconv.Itoa(number)
+}
+
+func findFactor(number int) []string {
+  var factor []string
+  for (number/2) > 1 {
+    factor = append(factor,"2")
+    number/=2
+  }
+  factor = append(factor, strconv.Itoa(number))
+  return factor
 }
