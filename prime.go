@@ -17,15 +17,16 @@ type number int
 
 func (n *number) factor() string {
   number := int(*n)
-  var factor []string
+  var factors []string
+
   if number %2 == 0 {
-    factor = findFactor(number,2)
-    return strings.Join(factor, ",")
+    factors = findFactor(number,2)
+    return strings.Join(factors, ",")
   }
 
   if number %3 == 0 {
-    factor = findFactor(number,3)
-    return strings.Join(factor, ",")
+    factors = findFactor(number,3)
+    return strings.Join(factors, ",")
   }
 
   return strconv.Itoa(number)
